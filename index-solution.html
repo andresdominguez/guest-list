@@ -1,0 +1,72 @@
+<!doctype html>
+<html data-ng-app>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css"/>
+  <script type="text/javascript" src="js/angular.min.js"></script>
+  <script type="text/javascript" src="js/underscore-min.js"></script>
+  <script type="text/javascript" src="js/guest-list-controller.js"></script>
+</head>
+<body data-ng-controller="GuestListCtrl">
+<div class="container">
+  <div class="hero-unit">
+    <h1>Guest list</h1>
+
+    <div class="lead">Welcome to the guest list application</div>
+  </div>
+
+  <form class="form-horizontal">
+    <legend>Add a new guest</legend>
+
+    <div class="control-group">
+      <label class="control-label">First name:</label>
+
+      <div class="controls">
+        <input data-ng-model="newGuest.first" type="text">
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Last name:</label>
+
+      <div class="controls">
+        <input data-ng-model="newGuest.last" type="text">
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">email:</label>
+
+      <div class="controls">
+        <input data-ng-model="newGuest.email" type="text">
+      </div>
+    </div>
+
+    <div class="control-group">
+      <div class="controls">
+        <a class="btn btn-primary" data-ng-click="create()">Submit</a>
+      </div>
+    </div>
+
+  </form>
+
+  <h2>Guest list</h2>
+  <table class="table">
+    <tr>
+      <td></td>
+      <td>First</td>
+      <td>Last</td>
+      <td>Email</td>
+    </tr>
+    <tr data-ng-repeat="row in list">
+      <td>
+        <a class="icon-remove" data-ng-click="remove(row)"></a>
+      </td>
+      <td>{{row.first}}</td>
+      <td>{{row.last}}</td>
+      <td>{{row.email}}</td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
