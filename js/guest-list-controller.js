@@ -1,0 +1,2 @@
+function GuestListCtrl($scope) {
+}
